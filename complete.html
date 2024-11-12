@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Miguel Chavez Nava</title>
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1, maximum-scale=1, minimum-scale=1" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&family=Rokkitt:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="default.css">
+
+    <link id = "theme-style" rel="stylesheet" type="text/css" href="">
+</head>
+<body>
+    <section class = "s2">
+        <div class ="nav-wrapper">
+                        
+            <ul id = "navigation"> 
+                <li><a href="index.html">Home</a></li>
+            </ul>
+
+            <ul id="navigation">
+                <li><a target = "_blank" href="mailto:miguel.chavez.nava.jr@emory.edu">Contact</a></li>
+            </ul>
+        </div>
+        <div class = "main-container">
+            <div class = "greeting-wrapper">
+                <h1>Autocomplete Program</h1>
+            </div>
+            <div class = "project-wrapper">
+                <div>
+                    <h3>About The Project</h3>
+                    <p>This was a project for my Data Structures & Algorithms class at Emory. The task was to create a class that would create a list of possible words for the user to choose from based on a given prefix. This program would also keep track of recent prefixes used so if the user gave the same starting word again, it would show words used more recently in front of the generated word list.</p>
+                    <p>This program was created using a massive trie of words, which was essentially a dictionary that I would have to search through to find words that would finish the prefix given. I created a recurssive method in order to go through the trie and find all words that would fill the prefix. Since every node in a trie is a letter, I would start at the end of the prefix and look for all of the children from that prefix.</p>
+                    <p>Then, there was a requirement that the candidate list for a prefix be ordered in a certain way. The assignement asked for the list to be ordered alphabetically and by length, so I created a simple sorting algorithm to accomplish this. I used an ArrayList for the candidate list, which has a built in sorting method, but that only sorts alphabetically and not based on length. So after doing that, I would run an insertion sort on the list based on length. After this, I did another insertion sort to make sure that words of the same length are sorted alphabetically.</p>
+                    <p>With this algorithm of gathering the candidate list done, it was simple to pick a candidate out of the list. It would be moved to the top of the list and the whole list would be saved if the user gave the same prefix.</p>
+                    <p>This project helped me a lot with understanding tries and trees as a data structure. I learned how to traverse these massive trees and follow certain paths based on the prefix. It was fun to complete this project as it is a way to apply a data structure in a useful way that could be implemented in a full project. If the user wanted to type something, giving them options of what to fill it in with would help with user satisfaction and efficency for the user.</p>
+                </div>
+                <div>
+                    <h3>Photos</h3>
+                    <h5>User Input</h5>
+                    <img id = "output_image" src = "images/completeInput.PNG">
+                    <h5>Program Output</h5>
+                    <img id = "output_image" src = "images/completeOutput.PNG">
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <script type = "text/javascript" src = "colors.js"></script>
+</body>
+
+</html>

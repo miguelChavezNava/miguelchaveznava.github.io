@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Miguel Chavez Nava</title>
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1, maximum-scale=1, minimum-scale=1" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&family=Rokkitt:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="default.css">
+
+    <link id = "theme-style" rel="stylesheet" type="text/css" href="">
+
+</head>
+<body>
+    <section class = "s2">
+        <div class ="nav-wrapper">
+                        
+            <ul id = "navigation"> 
+                <li><a href="index.html">Home</a></li>
+            </ul>
+
+            <ul id="navigation">
+                <li><a target = "_blank" href="mailto:miguel.chavez.nava.jr@emory.edu">Contact</a></li>
+            </ul>
+        </div>
+        <div class = "main-container">
+            <div class = "greeting-wrapper">
+                <h1>Trip Planner</h1>
+            </div>
+            <div class = "project-wrapper">
+                <div>
+                    <h3>About The Project</h3>
+                    <p>This was a project for my Intro To Computer Science II class at Emory. The idea was that I was given text files full of stops that the different bus routes at Emory go to. I was assigned with creating some methods that would allow for the creation of bus routes and trips so the user could give two stops and recieve a route of Emory shuttles that would take them there.</p>
+                    <p>I created the bus routes and trips in Java using linked lists as they are similar in concept to a bus route. These linked lists would be a circular doublely linked list as these bus routes loop back to the start once they end and it is useful for creating the routes and trips to know the previous stop before the current one.</p>
+                    <p>The user would be prompted with giving two stops on any Emory shuttle route. The program would then generate a list of the different routes that arrive at the two stops given through a simple search through each route linked list. Then, starting from the first stop, the program would continue through the route, looking for possible transfer points on each route in order to create a trip to the second stop from the first one. This completed trip will show the user each stop that will be passed and when to change shuttle routes.</p>
+                    <p>This projected teached me a lot about linked lists and object oriented programming as I created different linked lists for the bus routes and also had different objects like bus stops and trips interacting with each other in order to produce a final trip to the user. I enjoyed working on this project as it was a fun application of a topic I had learned about in class. It was enjoyable to figure out the different conditions to add and remove stops from a route and how to search for transfer points between routes.</p>
+                </div>
+                <div>
+                    <h3>Photos</h3>
+                    <h5>User Input</h5>
+                    <img id = "output_image" src = "images/plannerUserInput.PNG">
+                    <h5>Program Output</h5>
+                    <img id = "output_image" src = "images/plannerProgramOutput.PNG">
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <script type = "text/javascript" src = "colors.js"></script>
+</body>
+
+</html>

@@ -7,48 +7,99 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&family=Rokkitt:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="default.css">
 
     <link id = "theme-style" rel="stylesheet" type="text/css" href="">
 </head>
 <body>
+    <nav class="navBar">
+        <ul>
+            <li><a href="index.html" onclick="sessionStorage.setItem('scrollTarget', 'home')">Home</a></li>
+            <li><a href="index.html" onclick="sessionStorage.setItem('scrollTarget', 'about')">About</a></li>
+            <li><a href="index.html" onclick="sessionStorage.setItem('scrollTarget', 'projects')">Projects</a></li>
+            <li><a href="index.html" onclick="sessionStorage.setItem('scrollTarget', 'films')">Films</a></li>
+            <li><a href="index.html" onclick="sessionStorage.setItem('scrollTarget', 'contact')">Contact</a></li>
+        </ul>
+    </nav>
     <section class = "s2">
-        <div class ="nav-wrapper">
-                        
-            <ul id = "navigation"> 
-                <li><a href="index.html">Home</a></li>
-            </ul>
-
-            <ul id="navigation">
-                <li><a target = "_blank" href="mailto:miguel.chavez.nava.jr@emory.edu">Contact</a></li>
-            </ul>
-        </div>
         <div class = "main-container">
             <div class = "greeting-wrapper">
-                <h1>Autocomplete Program</h1>
+                <h1>Autocomplete</h1>
+                <div class = "imageContainer" id = "complete">
+                    <img src="images/complete.PNG" style="width: 100%; height: 100%; border-radius: 10px;">
+                </div>
             </div>
             <div class = "project-wrapper">
                 <div>
-                    <h3>About The Project</h3>
-                    <p>This was a project for my Data Structures & Algorithms class at Emory. The task was to create a class that would create a list of possible words for the user to choose from based on a given prefix. This program would also keep track of recent prefixes used so if the user gave the same starting word again, it would show words used more recently in front of the generated word list.</p>
-                    <p>This program was created using a massive trie of words, which was essentially a dictionary that I would have to search through to find words that would finish the prefix given. I created a recurssive method in order to go through the trie and find all words that would fill the prefix. Since every node in a trie is a letter, I would start at the end of the prefix and look for all of the children from that prefix.</p>
-                    <p>Then, there was a requirement that the candidate list for a prefix be ordered in a certain way. The assignement asked for the list to be ordered alphabetically and by length, so I created a simple sorting algorithm to accomplish this. I used an ArrayList for the candidate list, which has a built in sorting method, but that only sorts alphabetically and not based on length. So after doing that, I would run an insertion sort on the list based on length. After this, I did another insertion sort to make sure that words of the same length are sorted alphabetically.</p>
-                    <p>With this algorithm of gathering the candidate list done, it was simple to pick a candidate out of the list. It would be moved to the top of the list and the whole list would be saved if the user gave the same prefix.</p>
-                    <p>This project helped me a lot with understanding tries and trees as a data structure. I learned how to traverse these massive trees and follow certain paths based on the prefix. It was fun to complete this project as it is a way to apply a data structure in a useful way that could be implemented in a full project. If the user wanted to type something, giving them options of what to fill it in with would help with user satisfaction and efficency for the user.</p>
-                </div>
-                <div>
-                    <h3>Photos</h3>
-                    <h5>User Input</h5>
-                    <img id = "output_image" src = "images/completeInput.PNG">
-                    <h5>Program Output</h5>
-                    <img id = "output_image" src = "images/completeOutput.PNG">
+                    <h3>Overview</h3>
+                    <p>This program creates a trie of over 37,000 words, then the user gives a prefix and the program will generate a list of candidates that could complete the prefix. The user then picks a word to complete their prefix and the program saves the list of words using a hash map, placing the recent word picked of that prefix at the top of the list. This was done using Java.</p>
+                    <h3>Key Features & Takeaways</h3>
+                    <ul style="list-style:disc;">
+                        <li>Generates and traverses a massive trie dictionary efficiently to retrieve a list of words</li>
+                        <li>Uses recursion to build the list as the program checks every branch for words</li>
+                        <li>Sorts the candidate list to be in alphabetical order and sorted by length through insertion sort</li>
+                        <li>Demonstrates an understanding of tries and trees with sorting algorithms to generate a list efficiently</li>
+                    </ul>
                 </div>
             </div>
 
         </div>
     </section>
+    <footer>
+        <div class="footer-container">
+            <p class="footer-name">Website designed by Miguel Chavez Nava</p>
+            <div class="footer-socials">
+                <a href="mailto:miguel.chavez.nava.jr@emory.edu" target="_blank" aria-label="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 
+                        1.1.9 2 2 2h16c1.1 0 2-.9 
+                        2-2V6c0-1.1-.9-2-2-2zm0 
+                        4-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/miguel-chavez-nava" target="_blank" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white">
+                        <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 
+                        0 3.5 1.12 1 2.5 1 4.98 2.12 
+                        4.98 3.5zM.5 8.98h4V24h-4V8.98zM8.5 
+                        8.98h3.84v2.05h.05c.54-1.02 1.86-2.1 
+                        3.83-2.1 4.1 0 4.86 2.7 
+                        4.86 6.2V24h-4v-6.6c0-1.57-.03-3.6-2.2-3.6-2.2 
+                        0-2.54 1.72-2.54 3.5V24h-4V8.98z"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/miguelChavezNava" target="_blank" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white">
+                        <path d="M12 .5C5.73.5.5 5.73.5 
+                        12c0 5.08 3.29 9.38 7.86 10.9.58.1.79-.25.79-.56 
+                        0-.28-.01-1.03-.02-2.02-3.2.69-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.71.08-.7.08-.7 
+                        1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 
+                        0-1.26.45-2.3 1.19-3.11-.12-.29-.52-1.46.11-3.04 
+                        0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 2.9-.39c.98 0 
+                        1.97.13 2.9.39 2.2-1.49 3.17-1.18 
+                        3.17-1.18.64 1.58.24 2.75.12 3.04.74.81 
+                        1.19 1.85 1.19 3.11 0 4.43-2.69 
+                        5.4-5.25 5.69.41.35.78 1.04.78 2.1 
+                        0 1.52-.01 2.74-.01 3.11 0 .31.21.67.8.56A10.52 
+                        10.52 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5z"/>
+                    </svg>
+                </a>
+                <a href="https://www.youtube.com/@MiguelChavezNava150" target="_blank" aria-label="YouTube">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white">
+                        <path d="M23.5 6.2s-.2-1.64-.8-2.36c-.76-.92-1.6-.92-1.99-.98C17.32 
+                        2.5 12 2.5 12 2.5h-.01s-5.32 0-8.71.36c-.39.06-1.23.06-1.99.98-.6.72-.8 
+                        2.36-.8 2.36S0 8.12 0 10.04v1.92c0 1.92.49 
+                        3.84.49 3.84s.2 1.64.8 2.36c.76.92 1.76.9 
+                        2.21 1 .8.08 8.5.36 8.5.36s5.32 0 8.71-.36c.39-.06 
+                        1.23-.06 1.99-.98.6-.72.8-2.36.8-2.36s.49-1.92.49-3.84v-1.92c0-1.92-.49-3.84-.49-3.84zM9.75 
+                        14.57V8.43l6.27 3.07-6.27 3.07z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
     <script type = "text/javascript" src = "colors.js"></script>
 </body>
 

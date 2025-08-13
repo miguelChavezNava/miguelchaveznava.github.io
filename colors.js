@@ -5,7 +5,7 @@ let theme = localStorage.getItem('theme');
 
 if(theme == null)
 {
-    setTheme('light');
+    setTheme('white');
 }
 else
 {
@@ -24,21 +24,21 @@ for(var i = 0; i < themeDots.length; i++)
 
 function setTheme(mode)
 {
-    if(mode == 'green')
+    if(mode == 'white')
     {
         document.getElementById('theme-style').href = 'default.css';
     }
-    if(mode == 'blue')
+    if(mode == 'dark')
     {
-        document.getElementById('theme-style').href = "blue.css";
+        document.getElementById('theme-style').href = "dark.css";
     }
-    if(mode == 'grey')
+    if(mode == 'green')
     {
-        document.getElementById('theme-style').href = 'grey.css';
+        document.getElementById('theme-style').href = 'green.css';
     }
-    if(mode == 'purple')
+    if(mode == 'teal')
     {
-        document.getElementById('theme-style').href = 'purple.css';
+        document.getElementById('theme-style').href = 'teal.css';
     }
 
     localStorage.setItem('theme', mode);

@@ -1,0 +1,17 @@
+:root
+{
+    --mainColor: #0F3D3E; 
+    --secondaryColor: #145454; 
+    --borderColor: #082627;
+    --mainText: #D9F3F3; 
+    --secondaryText: #92CCCC; 
+    --themeDotBorder: #181818;
+    --previewBackgroundColor: rgba(15, 61, 62, 0.8);
+    --previewShadow: #082627;
+}
+
+.contact-icon svg,
+.footer-socials a svg {
+    fill: #D9F3F3; /* dark gray */
+    transition: transform 0.3s, fill 0.3s;
+}

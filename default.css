@@ -1,24 +1,20 @@
 :root
 {
-    --mainColor: #606B56;
-    --secondaryColor: #515a48;
-
-    --borderColor: #161914;
-
-    --mainText: #fff;
-    --secondaryText: #eeeeee;
-
-    --themeDotBorder: #fff;
-
-    --previewBackgroundColor: rgb(81, 90, 72, 0.8);
-    --previewShadow: #2a2f25;
+    --mainColor: #f2eeee;
+    --secondaryColor: #ffffff;
+    --borderColor: #282828;
+    --mainText: #2C3E50;
+    --secondaryText: #5D6D7E;
+    --themeDotBorder: #2C3E50;
+    --previewBackgroundColor: rgba(244, 246, 248, 0.8);
+    --previewShadow: #DADFE3;
 }
-  
 
 html, body
 {
     padding: 0;
     margin: 0;
+    scroll-behavior: smooth;    
 }
 
 body *
@@ -29,14 +25,15 @@ body *
 h1, h2, h3, h4, h5, h6, strong
 {
     color: var(--mainText);
-    font-family: "Rokkitt", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 500;
 }
 
 p, li, span, label, input, textarea
 {
     color: var(--mainText);
-    font-family: "Roboto Slab", monospace;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
 }
 
 a
@@ -57,11 +54,23 @@ h4 {font-size: 24px;}
 h5 {font-size: 20px;}
 h6 {font-size: 16px;}
 
+.home
+{
+    background-image: url(images/VegasSkyline.jpg); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    border-bottom: 1px solid var(--borderColor);
+    overflow: auto;
+}
+
 .s1
 {
     background-color: var(--mainColor);
     border-bottom: 1px solid var(--borderColor);
     overflow: auto;
+    padding-top: 40px;
 }
 
 .s2
@@ -69,6 +78,46 @@ h6 {font-size: 16px;}
     background-color: var(--secondaryColor);
     border-bottom: 1px solid var(--borderColor);
     overflow: auto;
+    padding-top: 40px;
+}
+
+.navBar
+{
+    background-color: var(--mainColor);
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid var(--borderColor);    
+}
+
+.navBar ul
+{
+    list-style-type: none;
+    overflow: hidden;
+    padding: 0;
+    margin: 0 auto;  
+}
+
+.navBar a
+{
+    display: block;
+    padding: 15px 25px;
+    font-size: 20px;
+    text-decoration: none;
+    text-align: center;
+    color: var(--mainText);
+}
+
+.navBar a:hover,
+.navBar a.active
+{
+    color: #17a2b8;
+}
+
+.navBar li
+{
+    display: inline-block
 }
 
 .main-container
@@ -83,6 +132,15 @@ h6 {font-size: 16px;}
     text-align: center;
     align-content: center;
     min-height: 10em;
+}
+
+.imageContainer {
+  display: inline-block;
+  background-color: var(--mainColor);
+  padding: 15px; /* space between image and border */
+  border: 3px solid var(--borderColor); /* border color and thickness */
+  border-radius: 15px; /* rounded corners */
+  margin: auto;
 }
 
 .intro-wrapper
@@ -210,24 +268,24 @@ h6 {font-size: 16px;}
     border-width: 5px;
 }
 
+#white-mode
+{
+    background-color: #ffffff;
+}
+
+#dark-mode
+{
+    background-color: #1F2833;
+}
+
 #green-mode
 {
-    background-color: #78866b;
+    background-color: #4f7928;
 }
 
-#blue-mode
+#teal-mode
 {
-    background-color: #679cd2;
-}
-
-#grey-mode
-{
-    background-color: #4c4c4c;
-}
-
-#purple-mode
-{
-    background-color: #7e4c74;
+    background-color: #145454;
 }
 
 #settings-note
@@ -307,18 +365,34 @@ h6 {font-size: 16px;}
     gap: 100px;
 }
 
-#skills
+.skillContainer
 {
-    display: flex;
-    justify-content: left;
-    background-color: var(--previewShadow);
+    background-color: rgb(192, 192, 192);
+    width: 80%;
+    border-radius: 15px;
 }
 
-.social-links
+.skill
+{
+    background-color: rgb(116, 194, 92);
+    padding: 1%;
+    text-align: right;
+    font-size: 15px;
+    border-radius: 15px;
+    color: var(--mainText);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+
+.skills
 {
     display: grid;
     align-content: center;
-    text-align: center;
+}
+
+.skills p
+{
+    font-size: 17px;
 }
 
 #social_image
@@ -372,10 +446,8 @@ h6 {font-size: 16px;}
 
 .project-wrapper
 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    padding-bottom: 50px;
-    gap: 100px;
+    margin-left: 25%;
+    margin-right: 25%;
 }
 
 #game-note
@@ -399,12 +471,212 @@ h6 {font-size: 16px;}
     height: 280px;
 }
 
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease;
+  z-index: 11;
+}
+#overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+#videoContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 200%);
+  opacity: 0;
+  transition: transform 0.7s ease, opacity 0.7s ease;
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#videoContainer.active {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+#closeBtn {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background: #ff4444;
+  border: none;
+  color: white;
+  font-size: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+#closeBtn:hover {
+  background: #cc0000;
+}
+
+.video-wrapper {
+  background: black;
+}
+
+.contact-title {
+    text-align: center;
+    margin-bottom: 100px;
+    margin-top: 0;
+}
+
+.contact-container {
+    padding: 40px 0;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 175px; /* increased spacing */
+    flex-wrap: wrap; /* responsive wrapping */
+}
+
+.contact-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var(--mainText);
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.contact-icon span {
+    margin-top: 15px;
+}
+
+.contact-icon svg {
+    transition: transform 0.3s, fill 0.3s;
+}
+
+.contact-icon.email:hover svg {
+    fill: #24bfd7;
+    transform: scale(1.2);
+}
+
+.contact-icon.linkedin:hover svg {
+    fill: #00669c;
+    transform: scale(1.2);
+}
+
+.contact-icon.github:hover svg {
+    fill: black;
+    transform: scale(1.2);
+}
+
+.contact-icon.youtube:hover svg {
+    fill: #ff0000;
+    transform: scale(1.2);
+}
+
+.contact-icon svg,
+.footer-socials a svg {
+    fill: #333333; /* dark gray */
+    transition: transform 0.3s, fill 0.3s;
+}
+
+footer {
+    background-color: var(--secondaryColor);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-name {
+    font-size: 16px;
+    color: var(--mainText);
+    margin: 0;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-socials a svg {
+    transition: transform 0.3s, fill 0.3s;
+}
+
+.footer-socials a:hover svg {
+    transform: scale(1.2);
+}
+
+.footer-socials a[aria-label="Email"]:hover svg {
+    fill: #24bfd7;
+}
+
+.footer-socials a[aria-label="LinkedIn"]:hover svg {
+    fill: #00669c;
+}
+
+.footer-socials a[aria-label="GitHub"]:hover svg {
+    fill: black;
+}
+
+.footer-socials a[aria-label="YouTube"]:hover svg {
+    fill: #ff0000;
+}
+#gambler
+{
+    width: 55%;
+} 
+#transform
+{
+    width: 40%;
+}
+#game
+{
+    width: 55%;
+}
+#complete
+{
+    width: 65%;
+}
+#planner
+{
+    width: 65%;
+}
+#gameplay
+{
+    width: 960px; 
+    height: 540px;
+}
+#website
+{
+    width: 45%;
+}
+
 @media screen and (max-width: 1200px)
 {
     .main-container
     {
         width: 95%;
     }
+
 }
 
 @media screen and (max-width: 800px)
@@ -418,9 +690,59 @@ h6 {font-size: 16px;}
             'right-column'
         ;
     }
-
     .right-column
     {
         justify-content: center;
+    }
+    .s1
+    {
+        padding-top: 75px;
+    }
+    .s2
+    {
+        padding-top: 75px;
+    }
+    h1
+    {
+        font-size: 48px;
+    }
+    #gambler
+    {
+        width: 85%;
+    }
+    #transform
+    {
+        width: 85%;
+    }
+    #game
+    {
+        width: 90%;
+    }
+    #complete
+    {
+        width: 90%;
+    }
+    #planner
+    {
+        width: 90%;
+    }
+    #website
+    {
+        width: 85%;
+    }
+    #preview-shadow
+    {
+        padding-left: 5px;
+        padding-top: 5px;
+    }
+    .project-wrapper
+    {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    #gameplay
+    {
+        width: 320px; 
+        height: 180px;
     }
 }

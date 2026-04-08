@@ -640,6 +640,11 @@ footer {
 .footer-socials a[aria-label="YouTube"]:hover svg {
     fill: #ff0000;
 }
+#challenge
+{
+    width: 80%;
+    height: 325px;
+}
 #gambler
 {
     width: 55%;
